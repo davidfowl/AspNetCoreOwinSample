@@ -21,7 +21,7 @@ namespace Microsoft.AspNetCore.Builder
                 var env = app.ApplicationServices.GetRequiredService<IWebHostEnvironment>();
                 var owinAppProperties = new AppProperties(owinAppBuilder.Properties);
 
-                owinAppProperties.OnAppDisposing = lifetime?.ApplicationStopping ?? default;
+                owinAppProperties.OnAppDisposing = lifetime.ApplicationStopping;
 
                 owinAppProperties.DefaultApp = next;
 
