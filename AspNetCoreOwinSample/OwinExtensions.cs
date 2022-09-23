@@ -10,8 +10,9 @@ namespace Microsoft.AspNetCore.Builder
             this IApplicationBuilder app,
             Action<IAppBuilder> configuration)
         {
-            // Only apply this middleware if there's no executable endpoint
-            // 
+            // Only apply this middleware if there's no executable endpoint. 
+            // This is what makes ASP.NET Core routing preferred over the OWIN pipeline.
+
             return app.MapWhen(c => c.GetEndpoint()?.RequestDelegate is null, sub => sub.UseOwin(setup => setup(next =>
             {
                 var owinAppBuilder = new AppBuilder();
