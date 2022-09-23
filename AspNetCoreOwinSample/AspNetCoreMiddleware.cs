@@ -1,5 +1,4 @@
-﻿// You may need to install the Microsoft.AspNetCore.Http.Abstractions package into your project
-public class AspNetCoreMiddleware
+﻿public class AspNetCoreMiddleware
 {
     private readonly RequestDelegate _next;
 

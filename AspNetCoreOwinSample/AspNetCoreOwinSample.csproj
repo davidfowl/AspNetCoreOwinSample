@@ -1,15 +1,26 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
-  <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
-    <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
-  </PropertyGroup>
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+    </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Microsoft.AspNet.WebApi.Core" Version="5.2.9" />
-    <PackageReference Include="Microsoft.AspNet.WebApi.Owin" Version="5.2.9" />
-    <PackageReference Include="Microsoft.AspNetCore.Owin" Version="6.0.9" />
-    <PackageReference Include="Microsoft.Owin" Version="4.2.2" />
-  </ItemGroup>
+    <ItemGroup>
+        <!-- Mark these packages as NoWarn because they haven't been re-compiled for .NET Core/Standard, but are still compatible.-->
+        <PackageReference Include="Microsoft.AspNet.WebApi.Core" Version="5.2.9">
+            <NoWarn>NU1701</NoWarn>
+        </PackageReference>
+        <PackageReference Include="Microsoft.AspNet.WebApi.Owin" Version="5.2.9">
+            <NoWarn>NU1701</NoWarn>
+        </PackageReference>
+        <PackageReference Include="Microsoft.Owin" Version="4.2.2">
+            <NoWarn>NU1701</NoWarn>
+        </PackageReference>
+        <PackageReference Include="Owin" Version="1.0.0">
+            <NoWarn>NU1701</NoWarn>
+        </PackageReference>
+
+        <PackageReference Include="Microsoft.AspNetCore.Owin" Version="6.0.9" />
+    </ItemGroup>
 </Project>
